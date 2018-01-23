@@ -1,0 +1,38 @@
+<import src="home-item/home-item-template.wxml" />
+
+<view id='box'>
+    <view class='box'>
+       <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block wx:for="{{movies}}" wx:for-index="index">    
+        <swiper-item>    
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+        </swiper-item>    
+      </block>    
+    </swiper>    
+    </view>
+
+ 
+    <view class='boxTwo'>
+        <text>爆款产品</text>
+    </view> 
+
+
+    <view>
+      <block wx:for="{{main_key}}" wx:for-item="item" class="left"  wx:for-index="idx">
+          <view catchtap='btn' data-id="{{item._id}}"> 
+            <view class='main_boxtwo'>
+                <image class='main-image' src="{{item.picPath[0]}}"></image>
+                <view class='box'>
+                    <text class='main-title'>{{item.description}}</text>
+                    <text class='main-titleTwo'>{{item.titleTwo}}</text>
+                    <text class='main-price'>￥{{item.price}}</text>
+                </view>
+            </view>
+          </view>
+      </block>
+    </view>
+  
+</view>
+
+
+
